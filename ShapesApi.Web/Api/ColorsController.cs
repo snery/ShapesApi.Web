@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShapesApi.Data;
 using ShapesApi.Data.Model;
 
@@ -39,7 +38,7 @@ namespace ReactShapes.Web.Api
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to get shapes from API all");
-                return null;
+                throw new Exception(ex.ToString());
             }
         }
 

@@ -30,7 +30,7 @@ namespace ShapesApi.Data
                 {
                     var json = reader.ReadToEnd();
                     var results = JsonSerializer.Deserialize<IEnumerable<T>>(json);
-                    return results;
+                    return results ?? new List<T>();
                 }
             }
             catch(Exception ex)
